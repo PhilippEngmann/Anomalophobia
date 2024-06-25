@@ -4,371 +4,9 @@
 <head>
 	<title>main.md</title>
 	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-	<style>
-		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-		/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-		body {
-			font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-			font-size: var(--vscode-markdown-font-size, 14px);
-			padding: 0 26px;
-			line-height: var(--vscode-markdown-line-height, 22px);
-			word-wrap: break-word;
-		}
-
-		#code-csp-warning {
-			position: fixed;
-			top: 0;
-			right: 0;
-			color: white;
-			margin: 16px;
-			text-align: center;
-			font-size: 12px;
-			font-family: sans-serif;
-			background-color: #444444;
-			cursor: pointer;
-			padding: 6px;
-			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
-		}
-
-		#code-csp-warning:hover {
-			text-decoration: none;
-			background-color: #007acc;
-			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
-		}
-
-		body.scrollBeyondLastLine {
-			margin-bottom: calc(100vh - 22px);
-		}
-
-		body.showEditorSelection .code-line {
-			position: relative;
-		}
-
-		body.showEditorSelection .code-active-line:before,
-		body.showEditorSelection .code-line:hover:before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 0;
-			left: -12px;
-			height: 100%;
-		}
-
-		body.showEditorSelection li.code-active-line:before,
-		body.showEditorSelection li.code-line:hover:before {
-			left: -30px;
-		}
-
-		.vscode-light.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(0, 0, 0, 0.15);
-		}
-
-		.vscode-light.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(0, 0, 0, 0.40);
-		}
-
-		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
-
-		.vscode-dark.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(255, 255, 255, 0.4);
-		}
-
-		.vscode-dark.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(255, 255, 255, 0.60);
-		}
-
-		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
-
-		.vscode-high-contrast.showEditorSelection .code-active-line:before {
-			border-left: 3px solid rgba(255, 160, 0, 0.7);
-		}
-
-		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-			border-left: 3px solid rgba(255, 160, 0, 1);
-		}
-
-		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-			border-left: none;
-		}
-
-		img {
-			max-width: 100%;
-			max-height: 100%;
-			display: block;
-		}
-
-		a {
-			text-decoration: none;
-		}
-
-		a:hover {
-			text-decoration: underline;
-		}
-
-		a:focus,
-		input:focus,
-		select:focus,
-		textarea:focus {
-			outline: 1px solid -webkit-focus-ring-color;
-			outline-offset: -1px;
-		}
-
-		hr {
-			border: 0;
-			height: 2px;
-			border-bottom: 2px solid;
-		}
-
-		h1 {
-			padding-bottom: 0.3em;
-			line-height: 1.2;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
-		}
-
-		h1,
-		h2,
-		h3 {
-			font-weight: normal;
-		}
-
-		table {
-			border-collapse: collapse;
-		}
-
-		table>thead>tr>th {
-			text-align: left;
-			border-bottom: 1px solid;
-		}
-
-		table>thead>tr>th,
-		table>thead>tr>td,
-		table>tbody>tr>th,
-		table>tbody>tr>td {
-			padding: 5px 10px;
-		}
-
-		table>tbody>tr+tr>td {
-			border-top: 1px solid;
-		}
-
-		blockquote {
-			margin: 0 7px 0 5px;
-			padding: 0 16px 0 10px;
-			border-left-width: 5px;
-			border-left-style: solid;
-		}
-
-		code {
-			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-			font-size: 1em;
-			line-height: 1.357em;
-		}
-
-		body.wordWrap pre {
-			white-space: pre-wrap;
-		}
-
-		pre:not(.hljs),
-		pre.hljs code>div {
-			padding: 16px;
-			border-radius: 3px;
-			overflow: auto;
-		}
-
-		pre code {
-			color: var(--vscode-editor-foreground);
-			tab-size: 4;
-		}
-
-		/** Theming */
-
-		.vscode-light pre {
-			background-color: rgba(220, 220, 220, 0.4);
-		}
-
-		.vscode-dark pre {
-			background-color: rgba(10, 10, 10, 0.4);
-		}
-
-		.vscode-high-contrast pre {
-			background-color: rgb(0, 0, 0);
-		}
-
-		.vscode-high-contrast h1 {
-			border-color: rgb(0, 0, 0);
-		}
-
-		.vscode-light table>thead>tr>th {
-			border-color: rgba(0, 0, 0, 0.69);
-		}
-
-		.vscode-dark table>thead>tr>th {
-			border-color: rgba(255, 255, 255, 0.69);
-		}
-
-		.vscode-light h1,
-		.vscode-light hr,
-		.vscode-light table>tbody>tr+tr>td {
-			border-color: rgba(0, 0, 0, 0.18);
-		}
-
-		.vscode-dark h1,
-		.vscode-dark hr,
-		.vscode-dark table>tbody>tr+tr>td {
-			border-color: rgba(255, 255, 255, 0.18);
-		}
-	</style>
-
-	<style>
-		/* Tomorrow Theme */
-		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-		/* Tomorrow Comment */
-		.hljs-comment,
-		.hljs-quote {
-			color: #8e908c;
-		}
-
-		/* Tomorrow Red */
-		.hljs-variable,
-		.hljs-template-variable,
-		.hljs-tag,
-		.hljs-name,
-		.hljs-selector-id,
-		.hljs-selector-class,
-		.hljs-regexp,
-		.hljs-deletion {
-			color: #c82829;
-		}
-
-		/* Tomorrow Orange */
-		.hljs-number,
-		.hljs-built_in,
-		.hljs-builtin-name,
-		.hljs-literal,
-		.hljs-type,
-		.hljs-params,
-		.hljs-meta,
-		.hljs-link {
-			color: #f5871f;
-		}
-
-		/* Tomorrow Yellow */
-		.hljs-attribute {
-			color: #eab700;
-		}
-
-		/* Tomorrow Green */
-		.hljs-string,
-		.hljs-symbol,
-		.hljs-bullet,
-		.hljs-addition {
-			color: #718c00;
-		}
-
-		/* Tomorrow Blue */
-		.hljs-title,
-		.hljs-section {
-			color: #4271ae;
-		}
-
-		/* Tomorrow Purple */
-		.hljs-keyword,
-		.hljs-selector-tag {
-			color: #8959a8;
-		}
-
-		.hljs {
-			display: block;
-			overflow-x: auto;
-			color: #4d4d4c;
-			padding: 0.5em;
-		}
-
-		.hljs-emphasis {
-			font-style: italic;
-		}
-
-		.hljs-strong {
-			font-weight: bold;
-		}
-	</style>
-
-	<style>
-		/*
- * Markdown PDF CSS
- */
-
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-			padding: 0 12px;
-		}
-
-		pre {
-			background-color: #f8f8f8;
-			border: 1px solid #cccccc;
-			border-radius: 3px;
-			overflow-x: auto;
-			white-space: pre-wrap;
-			overflow-wrap: break-word;
-		}
-
-		pre:not(.hljs) {
-			padding: 23px;
-			line-height: 19px;
-		}
-
-		blockquote {
-			background: rgba(127, 127, 127, 0.1);
-			border-color: rgba(0, 122, 204, 0.5);
-		}
-
-		.emoji {
-			height: 1.4em;
-		}
-
-		code {
-			font-size: 14px;
-			line-height: 19px;
-		}
-
-		/* for inline code */
-		:not(pre):not(.hljs)>code {
-			color: #C9AE75;
-			/* Change the old color so it seems less like an error */
-			font-size: inherit;
-		}
-
-		/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-		.page {
-			page-break-after: always;
-		}
-	</style>
-
-	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 
 <body>
-	<script>
-		mermaid.initialize({
-			startOnLoad: true,
-			theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-				? 'dark'
-				: 'default'
-		});
-	</script>
 	<p><strong>Anomalophobia (n.)</strong></p>
 	<p>From the Greek 'anomalos' meaning irregular or abnormal, and 'phobia' meaning fear.</p>
 	<p>A psychological discomfort or aversion to objects, images, or situations that markedly deviate from what is
@@ -392,44 +30,61 @@
 		is that I saw people online also finding these kinds of images unsettling, see AI tv-remote)</p> -->
 	<p><strong>Examples</strong></p>
 	<details>
-		<summary>Photo of a tree where a large number of leaves appear to be growing directly out of the trunk (Personal Rating: 2/10)</summary>
+		<summary>Photo of a tree where a large number of leaves appear to be growing directly out of the trunk (Personal
+			Rating: 2/10)</summary>
 		<img src="images/leaves_tree.webp" width="33%">
 		<a href="https://www.treesatlanta.org/how-to-remove-english-ivy/" target="_blank">Source</a>
 	</details>
 	<details>
-		<summary>Complex molecular structure with densely clustered atoms in three seperate arms that stretch and bend unnaturally (Personal Rating: 6/10)</summary>
+		<summary>Complex molecular structure with densely clustered atoms in three seperate arms that stretch and bend
+			unnaturally (Personal Rating: 6/10)</summary>
 		<img src="images/molecule.webp" width="33%">
-		<a href="https://x.com/ibxtoycat/status/1155854715864911881" target="_blank">Source</a>
-		<span>(Example of someone expressing the feeling of anomalophobia. Notice over 200 likes, while many of the comments are either neutral or humorous)</span>
+		<div><a href="https://x.com/ibxtoycat/status/1155854715864911881" target="_blank">Source</a>
+			<span>(Example of someone expressing the feeling of anomalophobia. Notice over 200 likes, while many of the
+				comments are either neutral or humorous)</span>
+		</div>
 	</details>
 	<details>
-		<summary>Heavily modified Nintendo 64 controller with an excessive number of buttons, screens, and joysticks in a chaotic, impractical arrangement (Personal Rating: 6/10)</summary>
+		<summary>Heavily modified Nintendo 64 controller with an excessive number of buttons, screens, and joysticks in
+			a chaotic, impractical arrangement (Personal Rating: 6/10)</summary>
 		<img src="images/n64_controller.webp" width="33%">
 		<a href="https://youtu.be/byx-ztani2Y?feature=shared&t=171" target="_blank">Source</a>
 		<span>(Notice how not a single out of 100 comments mentions the image)</span>
 	</details>
 	<details>
-		<summary>Heavily modified Playstation 3 controller with an excessive number of shoulder buttons and joysticks, similar to the N64 one, but with more image distortion (Personal Rating: 10/10)</summary>
+		<summary>Heavily modified Playstation 3 controller with an excessive number of shoulder buttons and joysticks,
+			similar to the N64 one, but with more image distortion (Personal Rating: 10/10)</summary>
 		<img src="images/ps3_controller.webp" width="33%">
 		<a href="https://x.com/thatsgoodweb/status/1524180197121081344" target="_blank">Source</a>
 		<span>(Even this tweet got mixed responses)</span>
-		<div>It was notably also featured in the famous video <a href="https://www.youtube.com/watch?v=rzLIUgnKY40" target="_blank">future gen. consels wii2 ps4 xbox720?</a> with the label "funny ps4 controller".</div>
+		<div>It was notably also featured in the famous video <a href="https://www.youtube.com/watch?v=rzLIUgnKY40"
+				target="_blank">future gen. consels wii2 ps4 xbox720?</a> with the label "funny ps4 controller".</div>
 	</details>
 	<details>
-		<summary>Real life photo of a heavily modified Playstation 4 controller with a slightly less excessive number of shoulder buttons and joysticks (Personal Rating: 8/10)</summary>
+		<summary>Real life photo of a heavily modified Playstation 4 controller with a slightly less excessive number of
+			shoulder buttons and joysticks (Personal Rating: 8/10)</summary>
 		<img src="images/ps4_controller.webp" width="33%">
 		<a href="https://x.com/Powerful_Imgs/status/1521187801605324802" target="_blank">Source</a>
 	</details>
 	<details>
-		<summary>Large mutated creeper with a long, curved neck and four long and stretched legs (Personal Rating: 9/10)</summary>
+		<summary>Large mutated creeper with a long, curved neck and four long and stretched legs (Personal Rating: 9/10)
+		</summary>
 		<img src="images/mutant_creeper.webp" width="33%">
-		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/n0txg4t8xG4?si=t-300uvrSJr2318T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/n0txg4t8xG4?si=t-300uvrSJr2318T"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		<div><a href="https://joke-battles.fandom.com/wiki/Mutant_Creeper" target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>Minecraft showcase of someone "mining a pig" as if they were a regular Minecraft blocks (Personal Rating: 6/10)</summary>
-		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VDjvIIArHMM?si=YUMARabQvYmj-GS3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		<div>The same video also contains a scene where the player eats a diamond, which I would rate about the same. His entire channel is actually filled with this kind of Minecraft content.</div>
+		<summary>Minecraft showcase of someone "mining a pig" as if they were a regular Minecraft blocks (Personal
+			Rating: 6/10)</summary>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VDjvIIArHMM?si=YUMARabQvYmj-GS3"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<div>The same video also contains a scene where the player eats a diamond, which I would rate about the same.
+			His entire channel is actually filled with this kind of Minecraft content.</div>
 	</details>
 	<details>
 		<summary>3D model of a Minecraft creeper with the pig texture applied to it (Personal Rating: 6/10)</summary>
@@ -437,39 +92,51 @@
 		<div><a href="https://www.planetminecraft.com/mob-skin/piper-pig-creeper/" target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>Photo of a keyboard where lots of visible air bubbles have formed beneath the paint (Personal Rating: 4/10)</summary>
+		<summary>Photo of a keyboard where lots of visible air bubbles have formed beneath the paint (Personal Rating:
+			4/10)</summary>
 		<img src="images/chicken_pox_keyboard.webp" width="33%">
-		<div><a href="https://www.reddit.com/r/crossposts_tests/comments/1dky8lw/my_keyboard_developed_the_chicken_pox_after_i/?rdt=39194" target="_blank">Source</a></div>
+		<div><a href="https://www.reddit.com/r/crossposts_tests/comments/1dky8lw/my_keyboard_developed_the_chicken_pox_after_i/?rdt=39194"
+				target="_blank">Source</a></div>
 	</details>
 	<details>
 		<summary>Picture of a shower faucet with 9 seperate shower heads (Personal Rating: 3/10)</summary>
 		<img src="images/shower_faucet.webp" width="33%">
-		<div><a href="https://knowyourmeme.com/photos/2400037-biblically-accurate-angels-be-not-afraid" target="_blank">Source</a></div>
+		<div><a href="https://knowyourmeme.com/photos/2400037-biblically-accurate-angels-be-not-afraid"
+				target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>Photo of a pineapple with multiple pertrusions sticking out of from it and other anomalies (Personal Rating: 8/10)</summary>
+		<summary>Photo of a pineapple with multiple pertrusions sticking out of from it and other anomalies (Personal
+			Rating: 8/10)</summary>
 		<img src="images/lovecraftian_pineapple.webp" width="33%">
-		<div><a href="https://www.reddit.com/r/Damnthatsinteresting/comments/121nbaa/this_pineapple_seed_got_infected_and_turned_into/" target="_blank">Source</a></div>
+		<div><a href="https://www.reddit.com/r/Damnthatsinteresting/comments/121nbaa/this_pineapple_seed_got_infected_and_turned_into/"
+				target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>Meme that shows the number of cameras on an iPhone increasing with higher models, until the entire phone is covered (Personal Rating: 5/10)</summary>
+		<summary>Meme that shows the number of cameras on an iPhone increasing with higher models, until the entire
+			phone is covered (Personal Rating: 5/10)</summary>
 		<img src="images/iphone_cameras.png" width="33%">
 		<div>Original source is a Fireship video I was unable to find</div>
 	</details>
 	<details>
-		<summary>AI-generated image of a TV-remote that is completely covered in lots of buttons with sizes that range from normal to tiny (Personal Rating: 6/10)</summary>
+		<summary>AI-generated image of a TV-remote that is completely covered in lots of buttons with sizes that range
+			from normal to tiny (Personal Rating: 6/10)</summary>
 		<img src="images/tv_remote.webp" width="33%">
-		<div><a href="https://www.reddit.com/r/ChatGPT/comments/18rg3sb/a_tv_remote_but_it_gets_more_and_more_buttons/" target="_blank">Source</a></div>
+		<div><a href="https://www.reddit.com/r/ChatGPT/comments/18rg3sb/a_tv_remote_but_it_gets_more_and_more_buttons/"
+				target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>AI-generated image of a pasta dish with a massive pile of peas on top that appears to defy gravity, as if they were glued together (Personal Rating: 5/10)</summary>
+		<summary>AI-generated image of a pasta dish with a massive pile of peas on top that appears to defy gravity, as
+			if they were glued together (Personal Rating: 5/10)</summary>
 		<img src="images/spaghetti_peas.webp" width="33%">
-		<div><a href="https://www.reddit.com/r/ChatGPT/comments/184x5xo/asked_chatgpt_to_continuously_add_more_peas_to/" target="_blank">Source</a></div>
+		<div><a href="https://www.reddit.com/r/ChatGPT/comments/184x5xo/asked_chatgpt_to_continuously_add_more_peas_to/"
+				target="_blank">Source</a></div>
 	</details>
 	<details>
-		<summary>AI-generated image of a huge cookie cake standing on a base of other cakes, and a massive pile of various sweets on top of it, similar to the previous image  (Personal Rating: 6/10)</summary>
+		<summary>AI-generated image of a huge cookie cake standing on a base of other cakes, and a massive pile of
+			various sweets on top of it, similar to the previous image (Personal Rating: 6/10)</summary>
 		<img src="images/cookie.webp" width="33%">
-		<div><a href="https://www.reddit.com/r/ChatGPT/comments/18ra8o9/a_cookie_but_it_gets_more_and_more_unhealthy/" target="_blank">Source</a></div>
+		<div><a href="https://www.reddit.com/r/ChatGPT/comments/18ra8o9/a_cookie_but_it_gets_more_and_more_unhealthy/"
+				target="_blank">Source</a></div>
 	</details>
 
 </body>
